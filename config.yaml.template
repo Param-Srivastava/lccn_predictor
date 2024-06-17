@@ -8,11 +8,11 @@ loguru:
     level: INFO
     rotation: '00:00'
 mongodb:
-  ip: 127.0.0.1
+  ip: "@lccncluster.t1nvs4d.mongodb.net"
   port: 27017
-  username: 'username'
-  password: 'password'
-  db: lccn
+  username: 'paramsri_0206'
+  password: 'Parag@123'
+  db: dblccn
 fastapi:
   CORS_allow_origins:
     - "http://localhost:3000"

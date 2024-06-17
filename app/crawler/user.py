@@ -7,7 +7,7 @@ from app.db.models import DATA_REGION
 async def request_user_rating_and_attended_contests_count(
     data_region: DATA_REGION,
     username: str,
-) -> Tuple[float | None, int | None]:
+) -> Tuple[float, int]:
     """
     request user's rating, attended contests count
     :param data_region:

@@ -1,5 +1,4 @@
 import asyncio
-
 from loguru import logger
 
 from app.db.mongodb import start_async_mongodb
