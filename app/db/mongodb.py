@@ -44,12 +44,10 @@ def get_async_mongodb_client() -> AgnosticClient:
     global async_mongodb_client
     if async_mongodb_client is None:
         ip = get_mongodb_config().get("ip")
-        port = get_mongodb_config().get("port")
         username = urllib.parse.quote_plus(get_mongodb_config().get("username"))
         password = urllib.parse.quote_plus(get_mongodb_config().get("password"))
-        db = get_mongodb_config().get("db")
         async_mongodb_client = AsyncIOMotorClient(
-            f"mongodb://{username}:{password}@{ip}:{port}/{db}",
+            f"mongodb+srv://{username}:{password}@{ip}/?retryWrites=true&w=majority&appName=LCCNCluster",
             # connectTimeoutMS=None,
         )
     return async_mongodb_client
