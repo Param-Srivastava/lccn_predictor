@@ -1,5 +1,5 @@
 import asyncio
-from typing import List, Optional
+from typing import List, Union, Optional
 
 from fastapi import APIRouter, Request
 from loguru import logger
@@ -52,7 +52,7 @@ async def contest_records(
     archived: Optional[bool] = False,
     skip: Optional[NonNegativeInt] = 0,
     limit: Optional[conint(ge=1, le=100)] = 25,
-) -> List[ContestRecordPredict | ContestRecordArchive]:
+) -> List[Union[ContestRecordPredict , ContestRecordArchive]]:
     """
     Query all records of a given contest.
     By default, query predicted contests only.
@@ -97,7 +97,7 @@ async def contest_records_user(
     contest_name: str,
     username: str,
     archived: Optional[bool] = False,
-) -> List[ContestRecordPredict | ContestRecordArchive]:
+) -> List[Union[ContestRecordPredict , ContestRecordArchive]]:
     """
     Query records of a given contest by username.
     By default, query predicted contests only.

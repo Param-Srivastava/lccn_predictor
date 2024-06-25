@@ -1,4 +1,4 @@
-export const baseUrl = "https://lccn.lbao.site/api/v1";
+export const baseUrl = "http://localhost:55555/api/v1";
 
 // daisyui themes
 export const themes = [
